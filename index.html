@@ -31,9 +31,9 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav visible-xs hidden-sm hidden-md">
-	        <li><a href="#">Chicken</a></li>
-	        <li><a href="#">Beef</a></li>
-	        <li><a href="#">Sushi</a></li>
+	        <li><a href="#" to-div="chicken-content">Chicken</a></li>
+	        <li><a href="#" to-div="beef-content">Beef</a></li>
+	        <li><a href="#" to-div="sushi-content">Sushi</a></li>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
@@ -172,6 +172,17 @@ Ius essent ceteros cu, mollis aliquip gubergren sit ex. At eos nulla iuvaret. Eu
 		</div>
 	</div>
 
+
+<script>
+        $(document).ready(function (){
+            $("ul.navbar-nav li a").click(function (){
+            	var to_div = $(this).attr('to-div')
+                $('html, body').animate({
+                    scrollTop: $('.'+to_div).offset().top
+                }, 1000);
+            });
+        });
+    </script>
 	
 </body>
 </html>
